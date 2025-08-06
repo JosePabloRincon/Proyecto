@@ -1,54 +1,89 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tienda</title>
-    <link rel="stylesheet" href="estilo.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard Admin</title>
+  <link rel="stylesheet" href="estilo.css" />
 </head>
 <body>
-    <div class="tienda-layout">
-        <header class="tienda-header">Header</header>
-        <aside class="filtros"><strong>Filtros</strong></aside>
-        <main class="productos-grid">
-            <div class="producto destacado">
-                <img src="img/iphone15pro.jpg" alt="iPhone 15 Pro" />
-                <h3>iPhone 15 Pro</h3>
-                <p class="precio">$999 USD</p>
-                <button>Agregar al carrito</button>
-            </div>
-            <div class="producto">
-                <img src="img/samsungs24.jpg" alt="Samsung Galaxy S24" />
-                <h3>Samsung Galaxy S24</h3>
-                <p class="precio">$899 USD</p>
-                <button>Agregar al carrito</button>
-            </div>
-            <div class="producto">
-                <img src="img/pixel8.jpg" alt="Google Pixel 8" />
-                <h3>Google Pixel 8</h3>
-                <p class="precio">$799 USD</p>
-                <button>Agregar al carrito</button>
-            </div>
-            <div class="producto">
-                <img src="img/oneplus12.jpg" alt="OnePlus 12" />
-                <h3>OnePlus 12</h3>
-                <p class="precio">$749 USD</p>
-                <button>Agregar al carrito</button>
-            </div>
-            <div class="producto">
-                <img src="img/xiaomi14.jpg" alt="Xiaomi 14" />
-                <h3>Xiaomi 14</h3>
-                <p class="precio">$699 USD</p>
-                <button>Agregar al carrito</button>
-            </div>
-            <div class="producto">
-                <img src="img/motorolaedge50.jpg" alt="Motorola Edge 50" />
-                <h3>Motorola Edge 50</h3>
-                <p class="precio">$649 USD</p>
-                <button>Agregar al carrito</button>
-            </div>
-        </main>
-        <footer class="tienda-footer">Footer</footer>
-    </div>
+  <div class="dashboard-layout">
+    <header class="dashboard-header">
+      <div class="logo">Admin</div>
+      <input type="text" placeholder="Buscar..." class="busqueda" />
+      <div class="acciones">
+        <button class="icono">🔔</button>
+        <button class="icono">👤</button>
+        <button class="menu-toggle">☰</button>
+      </div>
+    </header>
+
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Estadísticas</a></li>
+          <li><a href="#">Usuarios</a></li>
+          <li><a href="#">Productos</a></li>
+          <li><a href="#">Configuración</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="contenido-principal">
+      <section class="cards-grid">
+        <div class="card">Ventas: $10,000</div>
+        <div class="card">Usuarios: 1,200</div>
+        <div class="card">Productos: 350</div>
+        <div class="card">Pedidos: 650</div>
+      </section>
+
+      <section class="tabla-usuarios">
+        <h2>Lista de Usuarios</h2>
+        <div class="tabla-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Rol</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ana Pérez</td>
+                <td>ana@example.com</td>
+                <td>Admin</td>
+                <td>Activo</td>
+              </tr>
+              <tr>
+                <td>Juan López</td>
+                <td>juan@example.com</td>
+                <td>Editor</td>
+                <td>Activo</td>
+              </tr>
+              <tr>
+                <td>María Ruiz</td>
+                <td>maria@example.com</td>
+                <td>Viewer</td>
+                <td>Inactivo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="dashboard-footer">© 2025 Admin Dashboard</footer>
+  </div>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
+    toggle.addEventListener('click', () => {
+      sidebar.classList.toggle('visible');
+    });
+  </script>
 </body>
 </html>
